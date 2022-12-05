@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Plateup GetItems": {
+      "commandName": "Project",
+      "commandLineArgs": "\"C:\\Users\\drew_\\Downloads\\PlateUp\""
+    }
+  }
+}

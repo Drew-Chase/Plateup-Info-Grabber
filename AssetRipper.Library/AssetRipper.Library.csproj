@@ -1,0 +1,75 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<DebugType>embedded</DebugType>
+		<DebugSymbols>true</DebugSymbols>
+		<IsTrimmable>true</IsTrimmable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AssetRipper.TextureDecoder" Version="1.1.0" />
+		<PackageReference Include="Fmod5Sharp" Version="3.0.1" />
+		<PackageReference Include="ICSharpCode.Decompiler" Version="8.0.0.7106-preview2" />
+		<PackageReference Include="Kyaru.Texture2DDecoder" Version="0.16.40" />
+		<PackageReference Include="Kyaru.Texture2DDecoder.Windows" Version="0.1.0" />
+		<PackageReference Include="Kyaru.Texture2DDecoder.macOS" Version="0.1.0" />
+		<PackageReference Include="Kyaru.Texture2DDecoder.Linux" Version="0.1.0" />
+		<PackageReference Include="NAudio.Core" Version="2.1.0" />
+		<PackageReference Include="NAudio.Vorbis" Version="1.5.0" />
+		<PackageReference Include="SharpGLTF.Core" Version="1.0.0-alpha0027" />
+		<PackageReference Include="SharpGLTF.Toolkit" Version="1.0.0-alpha0027" />
+		<PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+		<PackageReference Include="SixLabors.ImageSharp" Version="2.1.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="AssetRipper.SourceGenerated">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>../Libraries/AssetRipper.SourceGenerated.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\AssetRipper.Core\AssetRipper.Core.csproj" />
+		<ProjectReference Include="..\ShaderTextRestorer\ShaderTextRestorer.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ContentWithTargetPath Include="Libraries\x64\texgenpack_x64.dll">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<TargetPath>texgenpack.dll</TargetPath>
+		</ContentWithTargetPath>
+		<ContentWithTargetPath Include="Libraries\x64\crunch_x64.dll">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<TargetPath>crunch.dll</TargetPath>
+		</ContentWithTargetPath>
+		<ContentWithTargetPath Include="Libraries\x64\crunchunity_x64.dll">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<TargetPath>crunchunity.dll</TargetPath>
+		</ContentWithTargetPath>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Remove="Exporters\Shaders\Templates\*" />
+		<EmbeddedResource Include="Exporters\Shaders\Templates\*" />
+		<None Remove="Exporters\AudioMixers\UnityPatch\*" />
+		<EmbeddedResource Include="Exporters\AudioMixers\UnityPatch\*" />
+		<None Remove="Exporters\Shaders\UnityPatch\*" />
+		<EmbeddedResource Include="Exporters\Shaders\UnityPatch\*" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Remove="C:\Users\jrpri\.nuget\packages\icsharpcode.decompiler\8.0.0.7106-preview2\contentFiles\any\netstandard2.0\Humanizer\LICENSE" />
+	  <Content Remove="C:\Users\jrpri\.nuget\packages\icsharpcode.decompiler\8.0.0.7106-preview2\contentFiles\any\netstandard2.0\Pattern Matching.html" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="C:\Users\jrpri\.nuget\packages\naudio.vorbis\1.5.0\contentFiles\any\netstandard2.0\README.md" />
+	</ItemGroup>
+
+</Project>
