@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Plateup GetItems": {
+      "commandName": "Project",
+      "commandLineArgs": "\"D:\\Workspaces\\Visual Studio Workspace\\C#\\Console Apps\\Plateup GetItems\\Testing Environment\""
+    }
+  }
+}
